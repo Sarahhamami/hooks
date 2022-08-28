@@ -1,0 +1,36 @@
+import './App.css';
+import {data} from './data';
+import { useState } from 'react';
+import MovieList from './components/movieList';
+import Filter from './components/filter';
+
+function App() {
+  const  [movies, setMovies] = useState(data);
+  const [titler, setTitler] = useState("");
+  const [rater, setRater] = useState(0)
+
+
+  const ChangeTitle = (e) => {
+    setTitler(e.target.value);
+  };
+  const ChangeRate = (newRating) => {
+    setRater(newRating)
+  
+  };
+  const AddMovie = (newFilm) => {
+    setMovies([...movies, newFilm]);
+    console.log(movies);
+  };
+  return (
+    <>
+    <Filter ChangeTitle={ChangeTitle} titlee={titler} ChangeRate={ChangeRate}  AddMovie={AddMovie}/>
+    <MovieList
+        movies={movies.filter((movie) =>
+          movie.title.trim().toLowerCase().includes(titler.trim().toLowerCase()) && movie.rate>=rater
+        )}
+      />
+    </>
+  );
+}
+
+export default App;
