@@ -3,6 +3,9 @@ import {data} from './data';
 import { useState } from 'react';
 import MovieList from './components/movieList';
 import Filter from './components/filter';
+import Desc from './components/desc';
+import {Routes} from 'react-router-dom';
+import {Route,Router} from 'react-router-dom';
 
 function App() {
   const  [movies, setMovies] = useState(data);
@@ -22,14 +25,30 @@ function App() {
     console.log(movies);
   };
   return (
-    <>
-    <Filter ChangeTitle={ChangeTitle} titlee={titler} ChangeRate={ChangeRate}  AddMovie={AddMovie}/>
-    <MovieList
-        movies={movies.filter((movie) =>
-          movie.title.trim().toLowerCase().includes(titler.trim().toLowerCase()) && movie.rate>=rater
-        )}
-      />
-    </>
+    <><Routes>
+   
+    
+   <Route
+    path='/Sarahhamami/hooks.git'
+    element={<div>
+      <Filter ChangeTitle={ChangeTitle} titlee={titler} ChangeRate={ChangeRate} AddMovie={AddMovie} />
+
+      <MovieList
+        movies={movies.filter((movie) => movie.title.trim().toLowerCase().includes(titler.trim().toLowerCase()) && movie.rate >= rater
+        )} />
+    </div>} />
+    
+    <Route
+    path='/'
+    element={<div>
+      <Filter ChangeTitle={ChangeTitle} titlee={titler} ChangeRate={ChangeRate} AddMovie={AddMovie} />
+
+      <MovieList
+        movies={movies.filter((movie) => movie.title.trim().toLowerCase().includes(titler.trim().toLowerCase()) && movie.rate >= rater
+        )} />
+    </div>} />
+      <Route path='/Desc/:id' element={<Desc movies={movies} />} />
+    </Routes></>
   );
 }
 

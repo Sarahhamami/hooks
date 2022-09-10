@@ -6,6 +6,7 @@ export const data = [
       description: `The aging patriarch of an organized crime 
              dynasty transfers control of his clandestine 
              empire to his reluctant son.`,
+      trailer: "https://www.youtube.com/embed/UaVTIH8mujA",
       rate: 1,
     },
     {
@@ -16,6 +17,7 @@ export const data = [
              a devil-may-care soapmaker form an underground
               fight club that evolves into something much, 
               much more.`,
+      trailer:"https://www.youtube.com/embed/O1nDozs-LxI",
       rate: 2,
     },
     {
@@ -25,6 +27,7 @@ export const data = [
       description: `In turn-of-the-century Vienna, 
              a magician uses his abilities to secure the 
              love of a woman far above his social standing.`,
+      trailer:"https://www.youtube.com/embed/i0xO64icGSY",
       rate: 3,
     },
     {
@@ -34,6 +37,7 @@ export const data = [
       description: `A former neo-nazi skinhead
               tries to prevent his younger brother 
               from going down the same wrong path that he did.`,
+      trailer:"https://www.youtube.com/embed/XfQYHqsiN5g",
       rate: 4,
     },
   ];

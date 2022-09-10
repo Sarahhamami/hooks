@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ReactStars from 'react-stars';
-
+import {Link} from 'react-router-dom';
 const movieCard = ({ movie }) => {
   
     return (
@@ -21,7 +21,7 @@ const movieCard = ({ movie }) => {
               activeColor="#ffd700"
             />
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+       <Link to={`/Desc/${movie.id}`} ><Button variant="primary">Go somewhere</Button></Link>
       </Card.Body>
     </Card>
     </>
